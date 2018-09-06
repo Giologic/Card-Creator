@@ -34,24 +34,44 @@
         
 
         <thead class="thead-dark">
-          {% for field in field_list %}
+          <!-- Field Headers -->
+          <!-- {% for field in field_list %}
             <th>{{ field.name }}</th>
-          {% endfor %}
+          {% endfor %} -->
+          <!-- <th>ID</th> -->
+          <th>Name</th>
+          <th>Description</th>
+          <th>Hitpoints</th>
+          <th>Cost</th>
+          <th>Deploy Time</th>
+          <th>Damage</th>
           <th>Actions</th>
         </thead>
         <tbody>
-          {% for cards in card_list %}
-          <tr>
-            <td>{{ cards.id }}</td>
-            <td>{{ cards.character_name }}</td>
-            <td>{{ cards.description }}</td>
-            <td>{{ cards.hitpoints }}</td>
-            <td>{{ cards.cost }}</td>
-            <td>{{ cards.deploy_time }}</td>
-            <td>{{ cards.damage }}</td>
-            <td><button type="button" class="btn btn-warning">Edit</button><button type="button" class="btn btn-danger">Delete</button></td>
+          {% for card in card_list %}
+          <tr text-transform: capitalize;>
+            <!-- <td>{{ card.id }}</td> -->
+            <td>{{ card.character_name }}</td>
+            <td>{{ card.description }}</td>
+            <td>{{ card.hitpoints }}</td>
+            <td>{{ card.cost }}</td>
+            <td>{{ card.deploy_time }}</td>
+            <td>{{ card.damage }}</td>
+            <td>
+              <a href="{% url 'cardcreation:edit' id=card.id %}" role="button" class="btn btn-warning">Edit</a>
+              <a href="{% url 'cardcreation:delete' id=card.id %}"delete/{{ card.id }}" role="button" class="btn btn-danger">Delete</a>
+            </td>
           </tr>
           {% endfor %}
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="{% url 'cardcreation:create' %}" role="button" class="btn btn-primary">Add Card</a></td>
+          </tr>
         </tbody>
       </table>
     </div>

@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+	# path('edit/', include('cardcreation.urls')),
+	# path('delete/', include('cardcreation.urls')),
+	# path('create/', include('cardcreation.urls')),
 	path('cards/', include('cardcreation.urls')),
     path('admin/', admin.site.urls),
 ]
