@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+"""
+Url patterns for the following applications:
+- cards
+- admin
+"""
 urlpatterns = [
-	# path('edit/', include('cardcreation.urls')),
-	# path('delete/', include('cardcreation.urls')),
-	# path('create/', include('cardcreation.urls')),
 	path('cards/', include('cardcreation.urls')),
     path('admin/', admin.site.urls),
 ]

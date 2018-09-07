@@ -11,28 +11,11 @@
     <title>Card Generator</title>
   </head>
   <body>
-    <!-- 
-        ########################
-        1. Fill up headers given the column headers of the cards
-        2. Fill all fields of the cards
-
-      
-
-
-  character_name = models.CharField(max_length=30)
-  description = models.CharField(max_length=3000)
-  hitpoints = models.IntegerField(default=1)
-  cost = models.IntegerField(default=1)
-  deploy_time = models.FloatField(default = 0.0)
-  damage = models.IntegerField(default=1)
-
-
-    -->
 
     <div class="container">
-      <table class="table">
-        
 
+      <!-- Card List Table -->
+      <table class="table">
         <thead class="thead-dark">
           <!-- Field Headers -->
           <!-- {% for field in field_list %}
@@ -48,6 +31,7 @@
           <th>Actions</th>
         </thead>
         <tbody>
+          <!-- Loop through the list of cards -->
           {% for card in card_list %}
           <tr text-transform: capitalize;>
             <!-- <td>{{ card.id }}</td> -->

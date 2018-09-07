@@ -16,6 +16,7 @@
       <h1> Edit Card </h1>
       <hr>
       <form method="post">
+        <!-- Styles and formatting are defined through the form class in Django -->
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Submit</button>
